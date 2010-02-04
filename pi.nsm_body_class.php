@@ -78,7 +78,7 @@ class Nsm_body_class {
 		if(! $return = $this->EE->TMPL->fetch_param("return"))
 			$retun = "class";
 
-		foreach ($this->class_map as $var => $prefix)
+		foreach ($this->variable_map as $var => $prefix)
 		{
 			if(array_key_exists("embed:" . $var, $this->EE->TMPL->embed_vars))
 			{
