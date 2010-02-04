@@ -39,8 +39,9 @@ Technical requirements include:
 if your existing site is a Git repo you can install the addon as a submodule:
 
 	cd path_to_your_site_git_repo_root
-	submodule add git://github.com/newism/nsm.body_class.ee_addon.git \
-	system/expressionengine/thirdparty/nsm_body_class
+	git submodule add git://github.com/newism/nsm.body_class.ee_addon.git \
+	system/expressionengine/third_party/nsm_body_class
+	
 
 Tag reference
 ------------
