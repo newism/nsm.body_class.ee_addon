@@ -1,7 +1,7 @@
 NSM Body class - Class generator for the `<body>` tag
 =====================================================
 
-NSM Body class is an [EE 2.0][ee2] plugin that generates a class attribute based on embed template parameters.
+NSM Body class is an [EE 2.0][ee] plugin that generates a class attribute based on embed template parameters.
 
 By default `{exp:nsm_body_class}` searches for the following embed parameters and adds them to a class attribute string (prefixed with an identifier):
 
@@ -101,17 +101,9 @@ User guide
 ----------
 
 1. Create a new `.header` template that contains a `<body>` tag.
-1. Add `{exp:nsm_body_class}` inside your `<body>` tag like so:
-
-	<body {exp:nsm_body_class}>
-
-3. Embed your `.header` template inside a primary template using:
-
-	{embed="_includes/.header" entry_id='10'}
-
-4. Request the primary template in your browser and the documents `<body>` tag should look like:
-
-	<body class="e-10">
+1. Add `{exp:nsm_body_class}` inside your `<body>` tag like so: `<body {exp:nsm_body_class}>`
+3. Embed your `.header` template inside a primary template using: ``{embed="_includes/.header" entry_id='10'}``
+4. Request the primary template in your browser and the documents `<body>` tag should look like: `<body class="e-10">`
 
 Release Notes
 -------------
