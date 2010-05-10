@@ -30,8 +30,9 @@ By default `{exp:nsm_body_class}` searches for the following embed parameters an
 * `day`
 * `template`
 * `template_group`
+* `body_class`
 
-The variable map can be extended or replaced using the `variable_map=''` tag parameter.
+The parameter map can be extended or replaced using the `param_map=''` tag parameter.
 
 The plugin returns a full class attribute by default ie: `class='eid-3'` however the attribute value can be returned by modifying the `return=''` parameter.
 
@@ -66,7 +67,7 @@ Tag reference
 
 ### `{exp:nsm_body_class}`
 
-    {exp:nsm_body_class:link [variable_map, replace_variable_map,
+    {exp:nsm_body_class:link [param_map, replace_param_map,
                               entry_id, url_title, year, month, day,
                               template, template_group,
                               return
@@ -76,7 +77,7 @@ Generate a class attribute (or value) based on embedded variables.
 
 #### Tag Parameters
 
-##### `variable_map='variable_name:prefix'` [optional]
+##### `param_map='variable_name:prefix'` [optional]
 
 NSM body class has an internal variable map that maps an variable name to a unique prefix.
 
@@ -89,6 +90,7 @@ The default map is:
 * `day` => d
 * `template_group` => tg
 * `template` => t
+* `body_class` => ""
 
 The class prefix is used when creating the class value. Example: If an `entry_id` and `url_title` are found as an embedded variable (or a tag parameter) the concatenated class would be:
 
@@ -100,21 +102,25 @@ The variable map can be extended to add as many extra mapping references as need
 
 Multiple mapping references are joined with a pipe like so:
 
-	variable_name1:prefix1|variable_name2:prefix2
+	param_1:prefix_1|param_2:prefix_2
 
-The `variable_map` parameter allows you to extend the functionality of the tag in endless ways.
+The `param_map` parameter allows you to extend the functionality of the tag in endless ways.
 
-##### `replace_variable_map='no'` [optional, default: 'class']
+##### `replace_param_map='no'` [optional, default: 'class']
 
-Replace the existing variable map. Default behaviour is to extend the default variable map with the new mapping references.
+Replace the existing parameter map. Default behaviour is to extend the default parameter map with the new param references.
 
-##### `entry_id, url_title, year, month, day, template, template_group` [optional]
+##### `entry_id, url_title, year, month, day, template, template_group, body_class` [optional]
 
-The embedded variables can be overridden with an explicit tag parameter. Any variable name in the variable map can be overridden this way.
+The embedded parameters can be overridden with an explicit tag parameter. Any variable name in the variable map can be overridden this way.
 
-##### `return='class_val'` [optional, default: 'class_attr']
+Example: Override the embedded `month` parameter:
 
-Return the class attribute value without the wrapping `class=''` string.
+	<body {exp:nsm_body_class month="12"}>
+
+##### `return='class_attr'` [optional, default: 'class_str']
+
+Return the class value without the wrapping `class=''` string.
 
 Userguide
 ---------

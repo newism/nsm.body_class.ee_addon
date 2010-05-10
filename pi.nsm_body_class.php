@@ -16,7 +16,7 @@
  **/
 $plugin_info = array(
 	'pi_name' => 'NSM body class',
-	'pi_version' => '1.0',
+	'pi_version' => '0.9.0',
 	'pi_author' => 'Leevi Graham',
 	'pi_author_url' => 'http://leevigraham.com/',
 	'pi_description' => 'Returns a class attribute or string based on embedded variables',
@@ -40,28 +40,22 @@ class Nsm_body_class {
 	protected $class_string = FALSE;
 
 	/**
-	 * The class value divider
-	 *
-	 * @var string
-	 **/
-	protected $divider = "-";
-
-	/**
-	 * The variable map
+	 * The parameter map
 	 * 
-	 * Keys are the embedded variable
+	 * Keys are the embed param
 	 * Values are the class value prefix
 	 *
 	 * @var array
 	 **/
-	protected $variable_map = array(
-		"entry_id" 			=> "eid",
-		"url_title" 		=> "eut",
-		"year"				=> "y",
-		"month"				=> "m",
-		"day"				=> "d",
-		"template" 			=> "t",
-		"template_group" 	=> "tg"
+	protected $param_map = array(
+		"entry_id" 			=> "eid-",
+		"url_title" 		=> "eut-",
+		"year"				=> "y-",
+		"month"				=> "m-",
+		"day"				=> "d-",
+		"template" 			=> "t-",
+		"template_group" 	=> "tg-",
+		"body_class"		=> ""
 	);
 
 	/**
@@ -73,43 +67,43 @@ class Nsm_body_class {
 	public function nsm_body_class()
 	{
 		$this->EE =& get_instance();
-		$this->_extendVariableMap();
+		$this->_extendParamMap();
 
 		if(! $return = $this->EE->TMPL->fetch_param("return"))
 			$retun = "class";
 
-		foreach ($this->variable_map as $var => $prefix)
+		foreach ($this->param_map as $var => $prefix)
 		{
 			if(array_key_exists("embed:" . $var, $this->EE->TMPL->embed_vars))
 			{
 				if(! $val = $this->EE->TMPL->fetch_param($var))
 					$val = $this->EE->TMPL->embed_vars["embed:" . $var];
 
-				$this->class_string .= "{$prefix}{$this->divider}{$val} ";
+				$this->class_string .= "{$prefix}{$val} ";
 			}
 		}
 
-		$this->return_data .= ($return == "class_val") ? $this->class_string : " class='{$this->class_string}' ";
+		$this->return_data .= ($return == "class_attr") ? $this->class_string : " class='{$this->class_string}' ";
 
 	}
 
 	/**
-	 * Extends the variable map using the variable_map tag parameter. Optionally replace the existing map.
+	 * Extends the variable map using the param_map tag parameter. Optionally replace the existing map.
 	 **/
-	private function _extendVariableMap()
+	private function _extendParamMap()
 	{
-		if(! $variable_map = $this->EE->TMPL->fetch_param("variable_map"))
+		if(! $param_map = $this->EE->TMPL->fetch_param("param_map"))
 			return;
 		
-		$variable_map = explode("|", $variable_map);
+		$param_map = explode("|", $param_map);
 
-		if($this->EE->TMPL->fetch_param("replace_variable_map") == "no")
-			$this->variable_map = array();
+		if(!$this->EE->TMPL->fetch_param("replace_param_map"))
+			$this->param_map = array();
 
-		foreach ($variable_map as $prop)
+		foreach ($param_map as $prop)
 		{
 			$parts = explode(":", $prop);
-			$this->variable_map[$parts[0]] = $parts[1];
+			$this->param_map[$parts[0]] = $parts[1];
 		}
 	}
 }
