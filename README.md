@@ -116,13 +116,13 @@ The embedded variables can be overridden with an explicit tag parameter. Any var
 
 Return the class attribute value without the wrapping `class=''` string.
 
-User guide
-----------
+Userguide
+---------
 
 1. Create a new `.header` template that contains a `<body>` tag.
 1. Add `{exp:nsm_body_class}` inside your `<body>` tag like so: `<body {exp:nsm_body_class}>`
 3. Embed your `.header` template inside a primary template using: ``{embed="_includes/.header" entry_id='10'}``
-4. Request the primary template in your browser and the documents `<body>` tag should look like: `<body class="e-10">`
+4. Request the primary template in your browser and the documents `<body>` tag will look like: `<body class="e-10">`
 
 Release Notes
 -------------
