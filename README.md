@@ -1,5 +1,5 @@
 NSM Body class - Class generator for the `<body>` tag
-======================================================
+=====================================================
 
 NSM Body class is an [EE 2.0][ee] plugin that generates a class attribute based on embed template parameters allowing greater CSS styling of templates.
 
