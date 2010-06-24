@@ -1,22 +1,27 @@
-<?php
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
- * NSM body class
+ * NSM Body Class Plugin
  * 
- * Returns a class attribute or string based on embedded variables
+ * Generally a module is better to use than a plugin if if it has not CP backend
  *
- * @author Leevi Graham
- * @license See README.md
+ * @package			NsmBodyClass
+ * @version			0.0.1
+ * @author			Leevi Graham <http://leevigraham.com>
+ * @copyright 		Copyright (c) 2007-2010 Newism
+ * @license 		Commercial - please see LICENSE file included with this distribution
+ * @link			http://expressionengine-addons.com/nsm-body-class
+ * @see 			http://expressionengine.com/public_beta/docs/development/plugins.html
  */
 
 /**
- * Plugin infotmation
+ * Plugin Info
  *
  * @var array
- **/
+ */
 $plugin_info = array(
 	'pi_name' => 'NSM body class',
-	'pi_version' => '0.9.0',
+	'pi_version' => '1.0.0RC1',
 	'pi_author' => 'Leevi Graham',
 	'pi_author_url' => 'http://leevigraham.com/',
 	'pi_description' => 'Returns a class attribute or string based on embedded variables',

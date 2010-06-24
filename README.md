@@ -122,8 +122,8 @@ Example: Override the embedded `month` parameter:
 
 Return the class value without the wrapping `class=''` string.
 
-Userguide
----------
+User guide
+----------
 
 1. Create a new `.header` template that contains a `<body>` tag.
 1. Add `{exp:nsm_body_class}` inside your `<body>` tag like so: `<body {exp:nsm_body_class}>`
@@ -143,9 +143,9 @@ There are no specific upgrade notes for this version.
 
 ### Change log
 
-#### 1.0.0
+#### 1.0.0RC1
 
-* Initial release
+* Initial release candidate
 
 Support
 -------
