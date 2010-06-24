@@ -20,14 +20,14 @@
 			<title>Version 1.0.0RC1</title>
 			<ee_addon:version>1.0.0RC1</ee_addon:version>
 			<link>https://github.com/newism/nsm.body_class.ee_addon/tree/0.1.0</link>
-			<pubDate>Thursday, 24 Jun 2010 11:43:55 +1100</pubDate>
+			<pubDate>Thursday, 24 Jun 2010 11:45:00 +1100</pubDate>
 			<description><![CDATA[
 				<ul>
 					<li>Initial release candidate</li>
 				</ul>
 			]]>
 			</description>
-			<enclosure url="https://github.com/newism/nsm.body_class.ee_addon/zipball/1.0.0RC1" length="16261" type="application/zip" />
+			<enclosure url="https://github.com/newism/nsm.body_class.ee_addon/zipball/1.0.0RC1" length="7090" type="application/zip" />
 		 </item>
 	</channel>
 </rss>
