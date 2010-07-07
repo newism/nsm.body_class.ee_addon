@@ -25,7 +25,7 @@ $plugin_info = array(
 	'pi_author' => 'Leevi Graham',
 	'pi_author_url' => 'http://leevigraham.com/',
 	'pi_description' => 'Returns a class attribute or string based on embedded variables',
-	'pi_usage' => "Refer to the README"
+	'pi_usage' => 'http://expressionengine-addons.com/nsm-body-class'
 );
 
 class Nsm_body_class {
