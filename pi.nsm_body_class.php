@@ -25,7 +25,11 @@ $plugin_info = array(
 	'pi_author' => 'Leevi Graham &mdash; Technical Director, <a href="http://newism.com.au/">Newism</a>',
 	'pi_author_url' => 'http://leevigraham.com/',
 	'pi_description' => 'Returns a class attribute or string based on embedded variables',
+<<<<<<< HEAD
 	'pi_usage' => 'http://expressionengine-addons.com/nsm-body-class'
+=======
+	'pi_usage' => "http://expressionengine-addons.com/nsm-body-class"
+>>>>>>> f52ac956cfdb836f6933be9b4dbff5610a2e8b77
 );
 
 class Nsm_body_class {
