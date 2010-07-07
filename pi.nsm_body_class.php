@@ -6,7 +6,7 @@
  * Generally a module is better to use than a plugin if if it has not CP backend
  *
  * @package			NsmBodyClass
- * @version			0.0.1
+ * @version			1.0.0
  * @author			Leevi Graham <http://leevigraham.com>
  * @copyright 		Copyright (c) 2007-2010 Newism
  * @license 		Commercial - please see LICENSE file included with this distribution
@@ -21,7 +21,7 @@
  */
 $plugin_info = array(
 	'pi_name' => 'NSM Body Class',
-	'pi_version' => '1.0.0RC1',
+	'pi_version' => '1.0.0',
 	'pi_author' => 'Leevi Graham &mdash; Technical Director, <a href="http://newism.com.au/">Newism</a>',
 	'pi_author_url' => 'http://leevigraham.com/',
 	'pi_description' => 'Returns a class attribute or string based on embedded variables',
