@@ -20,9 +20,9 @@
  * @var array
  */
 $plugin_info = array(
-	'pi_name' => 'NSM body class',
+	'pi_name' => 'NSM Body Class',
 	'pi_version' => '1.0.0RC1',
-	'pi_author' => 'Leevi Graham',
+	'pi_author' => 'Leevi Graham &mdash; Technical Director, <a href="http://newism.com.au/">Newism</a>',
 	'pi_author_url' => 'http://leevigraham.com/',
 	'pi_description' => 'Returns a class attribute or string based on embedded variables',
 	'pi_usage' => 'http://expressionengine-addons.com/nsm-body-class'
