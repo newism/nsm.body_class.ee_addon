@@ -60,6 +60,8 @@ class Nsm_body_class {
 		"day"				=> "d-",
 		"template" 			=> "t-",
 		"template_group" 	=> "tg-",
+		"channel_name"		=> "cn-",
+		"channel_id"		=> "cid-",
 		"body_class"		=> ""
 	);
 
