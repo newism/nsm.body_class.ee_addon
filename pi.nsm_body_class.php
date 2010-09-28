@@ -125,8 +125,10 @@ class Nsm_body_class {
 				$this->class_string .= "{$prefix}{$val} ";
 			}
 		}
+		
+		$this->class_string = trim($this->class_string); // @danott nerdy preference of no extra whitespace;
 
-		$this->return_data .= ($return == "class_attr") ? $this->class_string : " class='{$this->class_string}' ";
+		$this->return_data .= ($return == "class_attr") ? $this->class_string : " class=\"{$this->class_string}\"";
 
 	}
 
@@ -135,15 +137,16 @@ class Nsm_body_class {
 	 **/
 	private function _extendParamMap()
 	{
-		if(! $param_map = $this->TMPL->fetch_param("param_map"))
+		if(! $param_map_var = $this->TMPL->fetch_param("param_map"))
 			return;
 		
-		$param_map = explode("|", $param_map);
+		$param_map_var = explode("|", $param_map_var);
 
-		if(!$this->TMPL->fetch_param("replace_param_map"))
-			$this->param_map = array();
+		// Old logic didn't work in EE1
+		if($this->TMPL->fetch_param("replace_param_map") == "yes")
+			$this->param_map = array(); 
 
-		foreach ($param_map as $prop)
+		foreach ($param_map_var as $prop)
 		{
 			$parts = explode(":", $prop);
 			$this->param_map[$parts[0]] = $parts[1];
