@@ -110,6 +110,7 @@ class Nsm_body_class {
 			$this->TMPL =& $this->EE->TMPL;
 		}
 
+		$this->_extendParamMap();
 
 		if(! $return = $this->TMPL->fetch_param("return"))
 			$retun = "class";
