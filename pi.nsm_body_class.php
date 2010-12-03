@@ -79,13 +79,16 @@ class Nsm_body_class {
 
 		foreach ($this->param_map as $var => $prefix)
 		{
-			if(array_key_exists("embed:" . $var, $this->EE->TMPL->embed_vars))
+			if(!$val = $this->EE->TMPL->fetch_param($var))
 			{
-				if(! $val = $this->EE->TMPL->fetch_param($var))
+				if(array_key_exists("embed:" . $var, $this->EE->TMPL->embed_vars))
 					$val = $this->EE->TMPL->embed_vars["embed:" . $var];
-
-				$this->class_string .= "{$prefix}{$val} ";
+				else
+				    $val = false;
 			}
+
+			if($val)
+			    $this->class_string .= "{$prefix}{$val} ";
 		}
 
 		$this->return_data .= ($return == "class_attr") ? $this->class_string : " class='{$this->class_string}' ";
