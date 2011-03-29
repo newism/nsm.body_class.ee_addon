@@ -13,4 +13,4 @@
 $config['name'] 	= "NSM Body Class";
 $config["version"] 	= "1.0.0";
 
-$config['nsm_addon_updater']['versions_xml'] = 'http://expressionengine-addons.com/nsm-body-class/release-notes';
+$config['nsm_addon_updater']['versions_xml'] = 'http://expressionengine-addons.com/nsm-body-class/release-notes/feed';
