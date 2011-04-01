@@ -62,6 +62,8 @@ class Nsm_body_class {
 		"template_group" 	=> "tg-",
 		"channel_name"		=> "cn-",
 		"channel_id"		=> "cid-",
+		"member_id" 		=> "mid-",
+		"member_group_id" 	=> "mgid-",
 		"body_class"		=> ""
 	);
 

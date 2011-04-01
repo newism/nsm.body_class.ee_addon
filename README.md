@@ -30,6 +30,10 @@ By default `{exp:nsm_body_class}` searches for the following embed parameters an
 * `day`
 * `template`
 * `template_group`
+* `channel_name`
+* `channel_id`
+* `member_id`
+* `member_group_id`
 * `body_class`
 
 The parameter map can be extended or replaced using the `param_map=''` tag parameter.
@@ -70,6 +74,8 @@ Tag reference
     {exp:nsm_body_class:link [param_map, replace_param_map,
                               entry_id, url_title, year, month, day,
                               template, template_group,
+                              channel_id, channel_name,
+                              member_id, member_group_id,
                               return
                             ]}
 
@@ -90,6 +96,10 @@ The default map is:
 * `day` => d
 * `template_group` => tg
 * `template` => t
+* `channel_name` => cn
+* `channel_id` => cid
+* `member_id` => mid
+* `member_group_id` => mgid
 * `body_class` => ""
 
 The class prefix is used when creating the class value. Example: If an `entry_id` and `url_title` are found as an embedded variable (or a tag parameter) the concatenated class would be:
@@ -110,7 +120,7 @@ The `param_map` parameter allows you to extend the functionality of the tag in e
 
 Replace the existing parameter map. Default behaviour is to extend the default parameter map with the new param references.
 
-##### `entry_id, url_title, year, month, day, template, template_group, body_class` [optional]
+##### `entry_id, url_title, year, month, day, template, template_group, channel_id, channel_name, member_id, member_group_id, body_class` [optional]
 
 The embedded parameters can be overridden with an explicit tag parameter. Any variable name in the variable map can be overridden this way.
 
