@@ -10,6 +10,7 @@ cp mcp.* ${third_party_path}
 cp mod.* ${third_party_path}
 cp tab.* ${third_party_path}
 cp upd.* ${third_party_path}
+cp pi.* ${third_party_path}
 cp -R language ${third_party_path}
 cp -R libraries ${third_party_path}
 cp -R models ${third_party_path}
