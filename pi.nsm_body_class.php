@@ -79,7 +79,7 @@ class Nsm_body_class {
 		$this->_extendParamMap();
 
 		if(! $return = $this->EE->TMPL->fetch_param("return")) {
-			$retun = "class";
+			$return = "class";
 		}
 
 		foreach ($this->param_map as $var => $prefix) {
